@@ -1,0 +1,16 @@
+Debian VENENUX version para Usuarios CIEGOS unicamente
+
+default root:root
+usuario general:general
+
+Toda la documentacion requerida esta en https://codeberg.org/venenux/venenuxblind .
+
+Todos los paquetes de software incluidos en este medio y que forman en su 
+conjunto la distribución VENENUX GNU/Linux son software libre; las licencias 
+de cada uno en /usr/share/doc/*/copyright pero el trabajo tiene licencia 
+especial ya que la GNU nunca tomo en cuenta el como se copia indiscriminadamente 
+el trabjao de otros.
+
+VENENUX GNU/Linux es un sistema operativo tipo-Linux, enfocado en multimedia 
+y entretenimiento, que puede ser usado como sistema cotidiano de casa y 
+esta version es especialmente enfocada en personas ciegas unicamente.

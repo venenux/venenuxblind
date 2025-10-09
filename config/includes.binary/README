@@ -1,0 +1,15 @@
+Debian VENENUX version for BLIND Users only
+
+default root:root
+general user:general
+
+All required documentation is at https://codeberg.org/venenux/venenuxblind.
+
+All software packages included in this medium and that together forms the 
+distribution named VENENUX GNU/Linux is free software, licenses for each are 
+specified in /usr/share/doc/*/copyright, but the work itself has a special license, 
+since GNU never considered how work of others could be indiscriminately copied.
+
+VENENUX GNU/Linux is a Linux-like operating system focused on multimedia and 
+entertainment, which can be used as an everyday home system.
+This version is specifically focused on blind people only.
