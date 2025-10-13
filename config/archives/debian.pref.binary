@@ -1,0 +1,16 @@
+# use the excelent courier only
+Package: exim4*
+Pin: release *
+Pin-Priority: 1
+
+Package: courier*
+Pin: release *
+Pin-Priority: 700
+
+Package: wicd*
+Pin: release *
+Pin-Priority: 1
+
+Package: network-manager*
+Pin: release *
+Pin-Priority: 700
