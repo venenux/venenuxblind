@@ -24,6 +24,13 @@ El proceso aqui esta descrito para una persona nivel medio y ademas ciega.
 En la raiz de este repositorio (encima de este directorio docs) 
 ejecute el comando `lb clean` para asegurar un inicio limpio.
 
+Acto seguido se debe ejecutar la orden de configuracion, el comando 
+siguiente lo hace usando parametros siempre estan en la rama estable:
+
+`lb config --bootappend-live "boot=live components"  --distribution stable --debian-installer live --archive-areas "main contrib non-free"`
+
+Despues se creara un directorio `config` con muchos archivos.
+
 En el directorio `config` esta el directorio `package-list` y cada archivo alli 
 indicara los programas a incluir, un nombre por linea. Este directorio dice 
 que sera incluido, otros determinan y modifican el resultado final.
