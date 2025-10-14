@@ -1,2 +1,8 @@
 live-boot
 live-config
+debian-installer-launcher
+eject
+perl
+procps
+rsync
+uuid-runtime
