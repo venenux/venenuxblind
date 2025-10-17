@@ -1,11 +1,11 @@
 
 #  Debian VENENUX Desktop
 
-Este directorio construye un debian una imagen ISO/USB mix, como si de un disco duro se tratase, 
-esta instalacion trae `openbox` y `mate` como escritorios.
+Este directorio construye un debian una imagen ISO/USB mix, sin necesidad de instalar, 
+esta instalacion trae `mate` como escritorio.
 
 This directory builds a debian image USB/ISO mixed, like a hard disk made, 
-this installation comes with `openbox` and `mate` desktops.
+this installation comes with `mate` desktop.
 
 ## Requerimientos
 
@@ -19,27 +19,37 @@ this installation comes with `openbox` and `mate` desktops.
 
 ## Proceso
 
-El proceso aqui esta descrito para una persona nivel medio y ademas ciega.
+El proceso aqui esta descrito para una persona nivel medio incluso ciega.
 
-En la raiz de este repositorio (encima de este directorio docs) 
-ejecute el comando `lb clean` para asegurar un inicio limpio.
+Descarge las fuentes del proyecto o mejor dicho el directorio que contiene este archivo que esta leyendo.
 
-Acto seguido se debe ejecutar la orden de configuracion, el comando 
-siguiente lo hace usando parametros siempre estan en la rama estable:
+Encontrara en esas fuentes un directorio llamado `config` y otro llamado `docs` donde esta este archivo que esta leyendo actualmente.
+
+En la raiz de este repositorio (encima de este directorio docs) es donde siempre debera trabajar, ejecute el siguiente comando:
+
+`apt install -y live-build xorriso lsb-release file rsync wget xz-utils git zstd`
+
+Esto instalara varios programas y una vez terminado dependiendo de su conexion de internet ejecute en el mismo raiz de las fuentes el siguiente comando:
+
+`lb clean --purge`
+
+Este comando con el argumento purge solo debe realizarlo esta primera vez, las siguientes seran sin el argumento purge.
+
+Ahora que todo esta listo debemos preparar el entorno para que se construya el producto ISO en el mismo directorio ejecute el siguiente comando:
 
 `lb config --bootappend-live "boot=live components"  --distribution stable --debian-installer live --archive-areas "main contrib non-free"`
 
-Despues se creara un directorio `config` con muchos archivos.
+Despues de ejecutarlo se crearan en el directorio `config` muchos archivos especificos, de estos en el directorio `config` esta el directorio `package-list` y cada archivo alli indicara los programas a incluir, un nombre por linea. Este directorio dice que sera incluido, otros determinan y modifican el resultado final. Por ahora no es necesario modificar nada el comando ejecutado prepara el entorno para usar esas configuraciones.
 
-En el directorio `config` esta el directorio `package-list` y cada archivo alli 
-indicara los programas a incluir, un nombre por linea. Este directorio dice 
-que sera incluido, otros determinan y modifican el resultado final.
+Terminado las configuraciones y preparaciones ejecutemos el siguiente comando:
 
-Una vez editados los archivos ejecutar el comando `lb build` este tomara un 
-tiempo largo en ejecutar y en la consola saldran muchisimas lineas.
+`lb build`
 
-Al terminar se generaran muchos archivos donde el producto final es un archivo 
-con extension `.iso` este es el sistema Debian live con las modificaciones.
+Este ultimo tomara un tiempo largo en ejecutar y en la consola saldran muchisimas lineas, y dependera de el tipo de disco duro y la velocidad de internet.
+
+Al terminar se generaran muchos archivos en el directorio raiz donde el producto final es un archivo con extension `.iso` este es el sistema Debian live con las modificaciones.
+
+Si se queire repetir el proceso el comando `lb clean` debe ejecutarse nuevamente pero sin el argumento "purge".
 
 ## DOCS
 
